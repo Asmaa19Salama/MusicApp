@@ -1,24 +1,32 @@
 package com.example.android.musicapp;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+public class Play extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.play);
 
-        Button badanamu = (Button) findViewById(R.id.badanamu_button);
-        Button disney = (Button) findViewById(R.id.disney_button);
-        Button play = (Button) findViewById(R.id.go_to_last_play);
+
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.play);
+        ListView listView = (ListView) findViewById(R.id.list);
+
+        Button returnToMain = (Button) findViewById(R.id.play_main);
+        Button badanamu = (Button) findViewById(R.id.play_badanamu);
+        Button play = (Button) findViewById(R.id.play_disney);
+
+        onClick(returnToMain);
 
         onClick(badanamu);
-        onClick(disney);
+
         onClick(play);
     }
 
@@ -28,34 +36,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button = (Button) v;
         String name = button.getText().toString();
 
-        if (name.equalsIgnoreCase("See Badanamu songs :)")) {
+        if (name.equalsIgnoreCase("main")) {
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent vIntent = new Intent(MainActivity.this, Badanamu.class);
+                    Intent vIntent = new Intent(Play.this, MainActivity.class);
                     startActivity(vIntent);
                 }
             });
         }
-
-        else if (name.equalsIgnoreCase("See Disney songs :)")) {
+        else if (name.equalsIgnoreCase("badanamu")) {
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent vIntent = new Intent(MainActivity.this, Disney.class);
+                    Intent vIntent = new Intent(Play.this, Badanamu.class);
                     startActivity(vIntent);
                 }
             });
         }
-
-        else if (name.equalsIgnoreCase("Continue your last song")) {
+        else if (name.equalsIgnoreCase("disney")) {
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent vIntent = new Intent(MainActivity.this, Play.class);
+                    Intent vIntent = new Intent(Play.this, Disney.class);
                     startActivity(vIntent);
                 }
             });
         }
     }
+
 }

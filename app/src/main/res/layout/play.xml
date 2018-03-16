@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/play"
+    android:background="@color/colorPrimaryDark">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Enjoy listening :D"
+        android:textColor="@android:color/white"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:textSize="24sp"/>
+
+    <ImageView
+        android:src="@drawable/listen"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp">
+    <Button
+        android:id="@+id/play_badanamu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Badanamu"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/play_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Main"
+            android:textSize="18dp"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:id="@+id/play_disney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disney"
+            android:textSize="18dp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

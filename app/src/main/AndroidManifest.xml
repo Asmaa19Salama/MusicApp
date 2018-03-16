@@ -20,6 +20,8 @@
             android:label = "@string/badanamu"/>
         <activity android:name=".Disney"
             android:label = "@string/disney"/>
+        <activity android:name=".Play"
+            android:label = "@string/play"/>
     </application>
 
 </manifest>

@@ -23,27 +23,50 @@ public class Badanamu extends AppCompatActivity implements View.OnClickListener 
 
         SongAdapter adapters = new SongAdapter(this, songs);
 
-        //ListView listView = (ListView) findViewById(R.id.list_and_button);
-
-        //listView.setAdapter(adapters);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.list_and_button);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapters);
 
-        Button badanamu = (Button) findViewById(R.id.change_class);
-
+        Button returnToMain = (Button) findViewById(R.id.return_main_class);
+        Button badanamu = (Button)  findViewById(R.id.change_class);
+        Button play = (Button) findViewById(R.id.return_other_class);
+        onClick(returnToMain);
         onClick(badanamu);
+        onClick(play);
     }
 
     @Override
     public void onClick(View v) {
 
-        v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent vIntent = new Intent(new Badanamu(), Play.class);
-                startActivity(vIntent);
-            }
-        });
+        Button button = (Button) v;
+        String name = button.getText().toString();
+
+        if (name.equalsIgnoreCase("main")) {
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent vIntent = new Intent(Badanamu.this, MainActivity.class);
+                    startActivity(vIntent);
+                }
+            });
+        }
+        else if (name.equalsIgnoreCase("listen")) {
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent vIntent = new Intent(Badanamu.this, Play.class);
+                    startActivity(vIntent);
+                }
+            });
+        }
+        else if (name.equalsIgnoreCase("Change this kind of songs")) {
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent vIntent = new Intent(Badanamu.this, Disney.class);
+                    startActivity(vIntent);
+                }
+            });
+        }
     }
 }
